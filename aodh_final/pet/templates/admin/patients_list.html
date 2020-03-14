@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Patient List</h1>
+    <table>
+          <thead>
+          <tr>
+          <th><center><b></b></center></th>
+          <th><center><b>Name</b></center></th>
+          </tr>
+          </thead>
+          {% for list in doctor_list %}
+          <form action="" method="POST">
+            {% csrf_token %}
+          <tbody>
+          <tr>
+          <!-- <h2><a href="{% url 'check' pk=list.pk %}">checl</a></h2> -->
+          <input type="hidden" value="{{ list.pk }}" name="doc_pk">
+          <td><center>{{ list.first_name }}</center></td>
+          <td><center><input type='date' name='visit_date' value=''></center></td>
+          <td><center><button type="submit">details</center></button></td>
+          </tr>
+          </tbody>
+          </form>
+          {% endfor %}
+        </table>
+  </body>
+</html>

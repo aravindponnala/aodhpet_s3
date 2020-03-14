@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Confernse</h1>
+    {% for conference in conferences%}
+<div class="" style="border:red solid 2px">
+    <table>
+      <tbody>
+        <td><b>title:</b>
+        {{conference.title|title}}</td>
+        <td><b>location:</b>
+        {{conference.location}}</td>
+        <td>
+          <b>date:</b>
+          {{conference.date}}</td>
+          <td>
+            <b>time:</b>
+            {{conference.timings}}</td>
+    <table>
+      <tbody>
+        <td><b>content</b>
+        {{conference.content}}</td>
+      </tbody>
+    </table>
+  </div>
+    {% endfor %}
+  </body>
+</html>

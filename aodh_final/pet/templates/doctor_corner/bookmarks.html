@@ -1,0 +1,351 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bookmarks</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+
+</head>
+<style>
+
+
+{#=====================ANDROID MOBILE (FOR portrait)==========================#}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 812px) {
+     #wrapper_id{
+         width: 100%;
+            }
+
+
+             .row{
+                 width: 100%;
+             }
+             .col{
+                 width: 100%;
+             }
+
+      body {
+                height:auto;
+                width: auto;
+
+            }
+     #grad1 {
+                min-height: 179vw;
+                filter: brightness(100%);
+                border-radius: 10px;
+                height:auto;
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            }
+
+#heading_id{
+            background-color: #003300;
+            border-style:solid;
+            border-width:0.75px;
+            border-color: darkgreen;
+            color: white;
+            width:50%;
+            text-align: center;
+
+            }
+
+ #articles_card_div{
+     width: 100%;
+ }
+
+ #article_view{
+     float: right;
+ }
+
+ #case_report_card_div{
+     width: 100%;
+ }
+ #conferences_card_div{
+      width: 100%;
+ }
+#vet_news_card_div{
+    width: 100%;
+}
+#seminar_card_div{
+    width: 100%;
+}
+#books_card_div{
+    width: 100%;
+}
+#case_report_view{
+    font-weight: bold;
+    float: right;
+}
+#conference_view{
+    font-weight: bold;
+    float: right;
+}
+#seminar_view{
+    font-weight: bold;
+    float: right;
+}
+#case_report_view{
+    font-weight: bold;
+    float: right;
+}
+#conference_view{
+    font-weight: bold;
+    float: right;
+}
+#seminar_view{
+    font-weight: bold;
+    float: right;
+}
+#vet_news_read_more{
+    font-weight: bold;
+}
+}
+
+    {#=========================media query for desktop==============================#}
+    @media all and (min-width: 1024px) and (max-width: 1800px) {
+
+        #grad1 {
+            filter: brightness(100%);
+            min-height: 98vh;
+            height: auto;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+            padding-top: 6px;
+            margin-left: 40%;
+            width: 20%;
+            height: 40px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            border-left: none;
+            border-width: 0.75px;
+        }
+ #articles_card_div{
+     width: 100%;
+ }
+
+ #article_view{
+     float: right;
+ }
+
+ #case_report_card_div{
+     width: 100%;
+ }
+ #conferences_card_div{
+      width: 100%;
+ }
+#vet_news_card_div{
+    width: 100%;
+}
+#seminar_card_div{
+    width: 100%;
+}
+#books_card_div{
+    width: 100%;
+}
+#case_report_view{
+    font-weight: bold;
+    float: right;
+}
+#conference_view{
+      font-weight: bold;
+    float: right;
+}
+#vet_news_read_more{
+    font-weight: bold;
+}
+#seminar_view{
+    font-weight: bold;
+    float: right;
+}
+    }
+</style>
+<body>
+<div id="grad1">
+     <div id="first_div">
+    <div class="row">
+            <div class="col">
+                <h3 id="heading_id" style="  font-weight: bold;">BOOKMARKS</h3>
+            </div>
+        </div>
+  <div id="wrapper_id" class="wrapper ">
+   <div class="container" id="container_id">
+      <div class="container-fluid">
+          <form method="POST">
+              {% csrf_token %}
+              <input type="hidden" id="doc_id" value="{{doc_id}}">
+          {% if case_reports %}
+            <h4 id="article_heading"><b>ARTICLES</b></h4>
+              {% for x in articles %}
+                  <div class="card" id="articles_card_div">
+                      <div class="card-body">
+                          <b> {{ x.article_id.article_title }}</b>
+                          <br>
+                          {{ x.summery }}
+                          <a class="offset-5" href="{% url 'view_article_sbar' pk=x.article_id.id %}" id="article_view"><b>View</b></a>
+                      </div>
+                    </div>
+                  </form>
+              {% endfor %}
+              {%  endif %}
+              {% if case_reports %}
+                  <h4><b>CASE REPORTS</b></h4>
+              {% for case_report in case_reports %}
+              <div class="card" id="case_report_card_div">
+                  <div class="card-body">
+                      <b>Title:</b>
+                {{case_report.case_reports.title|title}} <br>
+                      <b>Author:</b>
+                {{case_report.case_reports.author}} <br>
+                    <b>Author information:</b>
+                 {{case_report.case_reports.email}} <br>
+                    <b>Date:</b>
+                 {{case_report.case_reports.published_on}} <br>
+                      <a href="{{case_report.case_reports.link}}" id="case_report_view"><b>view</b></a>
+
+              </div>
+          </div>
+
+          {% endfor %}
+          {%  endif %}
+
+          {% if conferences %}
+              <h4 id="conference_heading"><b>CONFERENCES</b></h4>
+          {% for conference in conferences %}
+          <div class="card" id="conferences_card_div">
+
+            <div class="card-body">
+                <b>Title:</b>
+                {{conference.conferences.title|title}} <br>
+                <b>Location:</b>
+                {{conference.conferences.location}} <br>
+
+                  <b>Date:</b>
+                  {{conference.conferences.date}} <br>
+
+                    <b>Time:</b>
+                    {{conference.conferences.timings}} <br>
+
+
+                <a href="{{conference.conferences.content}}" id="conference_view">view</a>
+
+            </div>
+          </div>
+
+
+
+
+          {% endfor %}
+          {%  endif %}
+
+          {% if vet_news %}
+              <h4><b>VET NEWS</b></h4>
+          {% for venew in vet_news %}
+          <div class="card" id="vet_news_card_div">
+
+            <div class="card-body">
+                <b>title:</b>
+                {{venew.vet_news.title|title}}
+               <b>location:</b>
+                {{venew.vet_news.location}}
+               <b>date:</b>
+                {{venew.vet_news.date}}
+               <b>time:</b>
+                {{venew.vet_news.timings}}
+                 <a href="{{venew.vet_news.content}}" id="vet_news_read_more">Read more...</a>
+
+            </div>
+          </div>
+
+
+
+
+          {% endfor %}
+          {%  endif %}
+
+          {% if seminars %}
+              <h4><b>SEMINARS</b></h4>
+          {% for seminar in seminars %}
+          <div class="card" id="seminar_card_div">
+
+            <div class="card-body">
+
+
+
+                <b>title:</b>
+                {{seminar.seminars.title|title}}
+                <b>location:</b>
+                {{seminar.seminars.location}}
+
+                  <b>date:</b>
+                  {{seminar.seminars.date}}
+
+                    <b>time:</b>
+                    {{seminar.seminars.timings}}
+
+                <b>content</b>
+                {{seminar.seminars.content|truncatewords:10}}
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{% url 'view_seminar_sbar' pk=seminar.pk %}" id="seminar_view">View</a></td>
+
+            </div>
+          </div>
+
+
+
+
+          {% endfor %}
+          {%  endif %}
+
+          {% if books %}
+              <h4><b>BOOKS</b></h4>
+          {% for book in books %}
+          <div class="card" id="books_card_div">
+
+            <div class="card-body">
+                {{book.books.title}}
+                <a href="{{book.books.content}}">book</a>
+
+            </div>
+          </div>
+
+
+
+       
+          {% endfor %}
+          {%  endif %}
+          
+          </div>
+      </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+   

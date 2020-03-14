@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+  </style>
+  </head>
+  <body>
+    <table id="customers">
+      <thead>
+        <tr>
+          <th>Pet Id</th>
+          <th>Pet Name</th>
+          <th>Pet Breed</th>
+          <th></th>
+        </tr>
+      </thead>
+      {% for pet in pet_list%}
+      <tbody>
+        <tr>
+          <td>{{pet.pet_id}}</td>
+          <td>{{pet.name}}</td>
+          <td>{{pet.breed}}</td>
+          <td><a href="{% url 'admin_pet_summery' pet_id=pet.pet_id %}">summery</a></td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </body>
+</html>

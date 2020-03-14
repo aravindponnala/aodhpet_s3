@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+  </head>
+  <body>
+    <h1>registred users list</h1>
+    <table class="table table-bordered table-sm" id="customers">
+          <thead>
+          <tr>
+          <th><center><b>customer_id</b></center></th>
+          <th><center><b>customer_name</b></center></th>
+          <th><center><b>email</b></center></th>
+          <th><center><b>mobile</b></center></th>
+          <th><center><b>password</b></center></th>
+          <th><center><b>summery</b></center></th>
+          </tr>
+          </thead>
+          {% for user_det in user %}
+          <tbody>
+          <tr>
+          <td><center>{{ user_det.customer_id }}</center></td>
+          <td><center>{{ user_det.customer_name }}</center></td>
+          <td><center>{{ user_det.email }}</center></td>
+          <td><center>{{ user_det.mobile}}</center></td>
+          <td><center>{{ user_det.password}}</center></td>
+          <td><a href="{% url 'admin_pet_list' customer_id=user_det.customer_id %}">Pet Details</a></td>
+          </tr>
+          </tbody>
+          {% endfor %}
+  </body>
+</html>

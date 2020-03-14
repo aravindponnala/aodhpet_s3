@@ -1,0 +1,671 @@
+
+	{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doctor assessment</title>
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+
+</head>
+<style>
+    .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:white;
+  background-color:white;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+
+ margin-left: 200px;
+  font-size: 40px;
+    color: #003300;
+}
+
+{#=====================ANDROID MOBILE (FOR portrait)==========================#}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 812px)
+{
+
+    #heading_id{
+                    border-style:solid;
+                    border-width:0.75px;
+                    border-color: darkgreen;
+                    background-color: #003300;
+                    color: white;
+                    margin-top: 10px;
+                    width: 210px;
+                    height:35px;
+                    text-align: center;
+            }
+
+
+    html {
+                     margin:0;
+                    padding:0;
+                    overflow-x: hidden;
+                }
+
+
+             #grad1 {
+                min-width:99%;
+                 min-height: 93vh;
+                 height: auto;
+                 border-radius: 10px;
+                filter: brightness(100%);
+                {#height: calc(100vw);#}
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            }
+     #dermatology_div{
+         margin-left: 40px;
+
+
+     }
+
+      #EYES_div{
+         margin-left: 40px;
+
+     }
+       #LUNGS_div{
+         margin-left: 40px;
+
+     }
+        #EARS_div{
+         margin-left: 40px;
+
+     }
+         #GASTROINTESTINAL_div{
+         margin-left: 40px;
+
+     }
+          #NOSE_and_throat_div{
+         margin-left: 40px;
+
+     }
+          #Next_button{
+              color: white;
+              background-color: #003300;
+              margin-left:80%;
+          }
+        #doctor_analytics{
+                font-size: 16px;
+                 color: #003300;
+
+             }
+         #doctors_corner{
+              font-size: 16px;
+                 color: #003300;
+
+             }
+         #list_of_patients{
+              font-size: 16px;
+                 color: #003300;
+
+             }
+         #doctor_prrofile{
+             font-size: 16px;
+                 color: #003300;
+
+             }
+         #helpline_number{
+              font-size: 16px;
+                 color: #003300;
+
+             }
+         #about{
+              font-size: 16px;
+                 color: #003300;
+
+
+             }
+        #Articles{
+             font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+        #Case_studies {
+             font-size: 16px;
+            width: 250px;
+            color: #003300;
+        }
+          #Case_reports {
+               font-size: 16px;
+            width: 250px;
+              color: #003300;
+        }
+          #conferences {
+               font-size: 16px;
+            width: 250px;
+              color: #003300;
+        }
+
+          #Vet_needs {
+               font-size: 16px;
+            width: 250px;
+              color: #003300;
+        }
+
+          #Seminars {
+               font-size: 16px;
+            width: 250px;
+              color: #003300;
+        }
+
+          #Books {
+               font-size: 16px;
+            width: 250px;
+              color: #003300;
+        }
+          #down_arrow {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-left: 2%;
+        border: solid #003300;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+}
+
+}
+
+
+
+
+
+
+{#==============================for desktop=========================================#}
+
+@media all and (min-width: 1024px) and (max-width: 1800px) {
+    #grad1 {
+            filter: brightness(100%);
+            min-height: 98vh;
+            height: auto;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+
+            margin-left: 37%;
+            width: 20%;
+
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            border-left: none;
+            border-width: 0.75px;
+        }
+
+    #dermatology_div{
+         margin-left: 380px;
+
+     }
+      #EYES_div{
+         margin-left: 380px;
+
+     }
+       #LUNGS_div{
+        margin-left: 380px;
+
+     }
+        #EARS_div{
+         margin-left: 380px;
+
+     }
+         #GASTROINTESTINAL_div{
+         margin-left: 380px;
+
+     }
+          #NOSE_and_throat_div{
+         margin-left: 380px;
+     }
+          #Next_button{
+              color: white;
+              background-color: #003300;
+              margin-left: 53%;
+          }
+         #TEXTAREA_ID{
+                margin-left: 380px;
+             width: 250px;
+         } 
+#doctor_analytics {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctors_corner {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #list_of_patients {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctor_prrofile {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #helpline_number {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #about {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #Articles {
+        font-size: 16px;
+        width: 250px;
+    }
+
+    #Case_studies {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Case_reports {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #conferences {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Vet_needs {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Seminars {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Books {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+    #Articles{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Case_studies{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Case_reports{
+        font-size: 16px;
+         color: #003300;
+    }
+    #conferences{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Vet_needs{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Seminars{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Books{
+        font-size: 16px;
+         color: #003300;
+    }
+    #close_btn{
+        margin-left: 80%;
+        color: #003300;
+    }
+   #down_arrow{
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        margin-left: 2%;
+        border: solid #003300;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        }
+
+        }
+
+
+</style>
+
+<body id="body_id" >
+    <input type="hidden" value="{{ doc_id }}" name="doc_id" id="doc_id">
+<div id="grad1">
+    <div class="one" id="border_id">
+    <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+  <div class="overlay-content">
+       <li style="list-style: none">
+               <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"  style="font-weight: bold;" href="{% url 'doctor_profile' doc_id=doc_id %}">DOCTOR PROFILE</a>
+          </li>
+           <li style="list-style: none">
+               <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"  style="font-weight: bold;" href="{% url 'list_patient' doc_id=doc_id %}">LIST OF PATIENTS </a>
+          </li>
+           <li style="list-style: none">
+              <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner" style="font-weight: bold;" onclick="show_doctors_corner()">DOCTORS CORNER<i class="down" id="down_arrow"></i></a>
+          </li>
+          <li id="show_div" style="display: none" >
+
+                      <a class="list-group-item list-group-item-action " role="tab" id="Articles" style="font-weight: bold;" href="{% url 'articles_sbar' doc_id=doc_id %}"> Articles </a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Case_reports" style="font-weight: bold;" href="{% url 'case_reports_sbar' doc_id=doc_id %}">Case reports </a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="conferences" style="font-weight: bold;" href="{% url 'conferences_sbar' doc_id=doc_id %}">Conferences </a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs" style="font-weight: bold;" href="{% url 'vet_news_sbar' doc_id=doc_id %}">Vet news</a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Seminars" style="font-weight: bold;" href="{% url 'seminars_sbar' doc_id=doc_id %}">Seminars</a>
+                      <a class="list-group-item list-group-item-action " role="tab" id="Books" style="font-weight: bold;" href="{% url 'books_sbar' doc_id=doc_id %}">Books</a>
+          </li>
+          <li style="list-style: none">
+            <a class="list-group-item list-group-item-action "  role="tab" id="doctor_analytics"  style="font-weight: bold;" href="{% url 'bookmarks' doc_id=doc_id %}">BOOKMARKS </a>
+        </li>
+        <li style="list-style: none">
+            <a class="list-group-item list-group-item-action "  role="tab" id="doctor_analytics"  style="font-weight: bold;" href="{% url 'danalytics' doc_id=doc_id %}">DOCTOR ANALYTICS </a>
+        </li>
+      <li style="list-style: none">
+           <a class="list-group-item list-group-item-action "  role="tab" id="helpline_number" onclick="diseaseshow()" style="font-weight: bold;">HELPLINE NUMBER</a>
+     </li>
+     <li style="list-style: none">
+        <a class="list-group-item list-group-item-action "  role="tab" id="about" onclick="diseaseshow()" style="font-weight: bold;">ABOUT</a>
+   </li>
+
+
+</div>
+</div>
+         <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+
+         <label id=pet_name_label ><b>Pet name:</b></label>{{ pet_obj.name }}  
+         <label id=breed_label><b>Breed:</b></label>{{ pet_obj.breed }}
+        <label id="age_label"><b>Age:</b></label>{{ pet_obj.age_year }} years {{ pet_obj.age_month }} month  
+        <label id="gender_label"><b>Gender:</b></label>{{ pet_obj.gender }}
+        <label id="gender_label"><b>Diet:</b></label>{{ purpose_pet_obj_diet.diet }}
+        <label id="gender_label"><b>Diet_state:</b></label>{{ purpose_pet_obj_diet.diet_state }}
+     <div class="row">
+            <div class="col">
+                <h3 id="heading_id" style="  font-weight: bold;">ASSESSMENT</h3>
+            </div>
+        </div>
+<div id="wrapper_id" class="wrapper ">
+   <div class="container" id="container_id">
+      <div class="container-fluid">
+
+    <form method="post">
+        {% csrf_token %}
+
+
+        <div class="row " id="dermatology_div">
+            <div class="form-group ">
+                <select name="DERMATOLOGY" class="selectpicker ml-2"  id="mySelect"  multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="DERMATOLOGY">
+                    <option value="Scaly" data-tokens="Scaly">Scaly</option>
+                    <option value="Pigment" data-tokens="Pigment">Pigment</option>
+                    <option value="Lumps" data-tokens="Lumps">Lumps</option>
+                    <option value="Parasites" data-tokens="Parasites">Parasites</option>
+                    <option value="Itchy" data-tokens="Itchy">Itchy</option>
+                    <option value="Matted" data-tokens="Matted">Matted</option>
+                    <option value="Shedding" data-tokens="Shedding">Shedding</option>
+                    <option value="Hair loss" data-tokens="Hair loss">Hair loss</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row " id="EYES_div">
+            <div class="form-group ">
+
+                <select name="EYES" class="selectpicker ml-2"    multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="EYES">
+                    <option value="Discharge" data-tokens="Discharge">Discharge</option>
+                    <option value="Inflamed/Red" data-tokens="Inflamed/Red">Inflamed/Red</option>
+                    <option value="Infection" data-tokens="Infection">Infection</option>
+                    <option value="Cataract" data-tokens="Cataract">Cataract</option>
+                    <option value="Dry eye" data-tokens="Dry eye">Dry eye</option>
+                    <option value="Ulcer/Lessions" data-tokens="Ulcer/Lessions">Ulcer/Lessions</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="row " id="LUNGS_div">
+            <div class="form-group ">
+
+                <select name="LUNGS" class="selectpicker ml-2"    multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="LUNGS">
+
+                    <option value="Abnormal sound" data-tokens="Abnormal sound">Abnormal sound</option>
+                    <option value="Coughing" data-tokens="Coughing">Coughing</option>
+                    <option value="Congestion" data-tokens="Congestion">Congestion</option>
+                    <option value="Breating difficulty" data-tokens="Breating difficulty">Breating difficulty</option>
+                    <option value="Rapid respiration" data-tokens="Rapid respiration">Rapid respiration</option>
+
+                </select>
+            </div>
+        </div>
+         <div class="row "  id="EARS_div">
+            <div class="form-group">
+
+                <select name="EARS" class="selectpicker ml-2"    multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="EARS">
+
+                    <option value="Inflamed" data-tokens="Inflamed">Inflamed</option>
+                    <option value="Yeast infection" data-tokens="Yeast infection">Yeast infection</option>
+                    <option value="Bacterial infection" data-tokens="Bacterial infection">Bacterial infection</option>
+                    <option value="Excessive debris" data-tokens="Excessive debris">Excessive debris</option>
+                    <option value="Excessive hair" data-tokens="Excessive hair">Excessive hair</option>
+                    <option value="Itchy" data-tokens="Itchy">Itchy</option>
+                    <option value="Mites" data-tokens="Mites">Mites</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row " id="GASTROINTESTINAL_div">
+            <div class="form-group ">
+
+                <select name="GASTROINTESTINAL" class="selectpicker ml-2"    multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="GASTROINTESTINAL">
+
+                    <option value="Excessive" data-tokens="Excessive">Excessive</option>
+                    <option value="Vomiting" data-tokens="Vomiting">Vomiting</option>
+                    <option value="Anorexia" data-tokens="Anorexia">Anorexia</option>
+                    <option value="Abnormal Feces" data-tokens="Abnormal Feces">Abnormal Feces </option>
+                    <option value="parasites" data-tokens="parasites">parasites</option>
+                    <option value="Diarrhea" data-tokens="Diarrhea">Diarrhea</option>
+                    <option value="Enlarged" data-tokens="Enlarged">Enlarged</option>
+                    <option value="Abnormal mass" data-tokens="Abnormal mass">Abnormal mass</option>
+                    <option value="Tense/Painful" data-tokens="Tense/Painful">Tense/Painful</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row " id="NOSE_and_throat_div">
+            <div class="form-group ">
+
+                <select name="NOSE_THROAT" class="selectpicker ml-2"    multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="NOSE & THROAT">
+
+                    <option value="Nasal discharge" data-tokens="Nasal discharge">Nasal discharge</option>
+                    <option value="Inflamed throat" data-tokens="Inflamed throat">Inflamed throat</option>
+                    <option value="Inflamed Tonsils" data-tokens="Inflamed Tonsils">Inflamed Tonsils</option>
+                    <option value="Elarged lamb" data-tokens="Elarged lamb">Elarged lamb</option>
+                    <option value="Parasites" data-tokens="Parasites">Parasites</option>
+                    <option value="Itchy" data-tokens="Itchy">Itchy</option>
+                    <option value="Matted" data-tokens="Matted">Matted</option>
+                    <option value="Shedding" data-tokens="Shedding">Shedding</option>
+                    <option value="Hair loss" data-tokens="Hair loss">Hair loss</option>
+                </select>
+            </div>
+        </div>
+         <div class="row " id="NOSE_and_throat_div">
+            <div class="form-group ">
+
+                <select name="UROGENITAL" class="selectpicker ml-2"  multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="UROGENITAL">
+
+                    <option value="Abnormal urination" data-tokens="Abnormal urination">Abnormal urination</option>
+                    <option value="Genital discharge" data-tokens="Genital discharge">Genital discharge</option>
+                    <option value="Abnormal testicles" data-tokens="Abnormal testicles">Abnormal testicles</option>
+                    <option value="Recommend neutering" data-tokens="Recommend neutering">Recommend neutering</option>
+                    <option value="Mammary tumours" data-tokens="Mammary tumours">Mammary tumours</option>
+                    <option value="Anal sacs" data-tokens="Anal sacs">Anal sacs</option>
+                    <option value="Enlarrged prostate" data-tokens="Enlarrged prostate">Enlarrged prostate</option>
+
+                </select>
+            </div>
+        </div>
+         <div class="row " id="NOSE_and_throat_div">
+            <div class="form-group ">
+
+                <select name="MOUTH_TEETH_GUMS" class="selectpicker ml-2"  l  multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="MOUTH TEETH & GUMS">
+
+                    <option value="Borken teeth<" data-tokens="Borken teeth">Borken teeth</option>
+                    <option value="Loose teeth throat" data-tokens="Loose teeth">Loose teeth</option>
+                    <option value="Tartar" data-tokens="Tartar">Tartar</option>
+                    <option value="Gingivitis" data-tokens="Gingivitis">Gingivitis</option>
+                    <option value="Ulcers/Lesions" data-tokens="Ulcers/Lesions">Ulcers/Lesions</option>
+                    <option value="Pyorrhea" data-tokens="Pyorrhea">Pyorrhea</option>
+
+                </select>
+            </div>
+        </div>
+         <div class="row " id="NOSE_and_throat_div">
+            <div class="form-group ">
+                <select name="MUSKULOSKELETAL" class="selectpicker ml-2"  l  multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="MUSKULOSKELETAL">
+
+                    <option value="Lameness" data-tokens="Nasa discharge">Lameness</option>
+                    <option value="Pain on plaptation" data-tokens="Pain on plaptation">Pain on plaptation</option>
+
+                </select>
+            </div>
+        </div>
+         <div class="row " id="NOSE_and_throat_div">
+            <div class="form-group">
+
+                <select name="HEART" class="selectpicker ml-2"  l  multiple data-live-search ="true" data-style="btn btn-outline-dark"  data-none-selected-text="HEART">
+
+                    <option value="Arrythmia" data-tokens="Nasa discharge">Arrythmia</option>
+                    <option value="Murmur" data-tokens="Inflamed throat">Murmur</option>
+
+                </select>
+            </div>
+        </div>
+
+            <div class="row " >
+                  <div class="col" >
+                        <textarea class="form-control" rows="2" name="others" id="TEXTAREA_ID"></textarea>
+                  </div>
+              </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <button type="submit" class="btn btn" id="Next_button">Next</button>
+            </div>
+        </div>
+
+
+ </form>
+    </div>
+      </div>
+   </div>
+ </div>
+</div>
+</body>
+</html>
+
+
+
+<!-- Notepad Script -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+<script>
+
+function openNav() {
+  document.getElementById("myNav").style.width = "70%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
+  function show_doctors_corner(){
+   if (document.getElementById('show_div').style.display=='none'){
+       document.getElementById('show_div').style.display='inline-block';
+
+
+   }else{
+       document.getElementById('show_div').style.display='none';
+
+   }
+}
+
+    </script>
+
+
+
+

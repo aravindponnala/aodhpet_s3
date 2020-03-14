@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+  #customers tr:hover {background-color: #ddd;}
+
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+    </style>
+  </head>
+  <body>
+    <h1>customer details</h1>
+    <table id="customers">
+          <thead>
+          <tr>
+            <th><center><b>Customer</b></center></th>
+          <th><center><b>pet id</b></center></th>
+          <th><center><b>amount</b></center></th>
+          <th><center><b>Summery</b></center></th>
+          <!-- <th><center><b>amount</b></center></th> -->
+          </tr>
+          </thead>
+          {% for values in doctorviewlog %}
+          <form action="" method="POST">
+            {% csrf_token %}
+          <tbody>
+          <tr>
+          <td><center>{{ values.customer_id.customer_name }}</center></td>
+          <td><center>{{ values.pet_id }}</center></td>
+          <td><center>{{ values.doc_pk.consultation_fee }}</center></td>
+          <td><center><a href="{% url 'customer_previous_visit' purpose_id=values.purpose_id %}">summery</a></center></td>
+          </tr>
+          </tbody>
+          </form>
+          {% endfor %}
+        </table>
+  </body>
+</html>

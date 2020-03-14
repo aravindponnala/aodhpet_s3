@@ -1,0 +1,623 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doctor summary</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+    .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:white;
+  background-color:white;
+  overflow-x: hidden;
+  transition: 0.3s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+
+ margin-left: 200px;
+  font-size: 40px;
+    color: #1f7a1f;
+}
+{#=====================ANDROID MOBILE (FOR portrait)==========================#}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 812px)
+{
+    #heading_id{
+        text-align: center;
+         border-style:solid;
+         border-width:0.75px;
+         border-color: darkgreen;
+         background-color: #003300;
+         color: white;
+         margin-top: 35px;
+         width: 170px;
+         height: 35px;
+        padding-top: 5px;
+
+}
+ body {
+                height:auto;
+                min-width: 170%;
+                width: auto;
+                {#margin-top: 10px;#}
+                {#border-style: solid;#}
+                {#border-width: 2px;#}
+                {#border-color: darkgreen;#}
+                {#margin-left: 7px;#}
+                {#border-radius: 10px;#}
+            }
+     #grad1 {
+                min-height: 172vw;
+                filter: brightness(100%);
+                border-radius: 10px;
+                height: auto;
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            }
+
+     .td{
+                border-style: solid;
+                border-color: black;
+
+            }
+            #vitals{
+
+                border-color: black;
+
+
+
+            }
+             #assessment{
+
+               border-color: black;
+
+            }
+              #symptoms{
+               border-color: black;
+
+            }
+               #summary{
+
+               border-color: black;
+
+            }
+               #close_visit_button{
+                   margin-left: 80%;
+               }
+
+ #doctor_analytics {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctors_corner {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #list_of_patients {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctor_prrofile {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #helpline_number {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #about {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #Articles {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Case_studies {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Case_reports {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #conferences {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Vet_needs {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Seminars {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Books {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+.table{
+    border-style: solid;
+    border-color: black;
+;
+}
+
+        }
+
+
+@media print {
+    #printid {
+        display :  none;
+    }
+
+    #close {
+        display :  none;
+    }
+}
+
+{#==============================for desktop=========================================#}
+
+@media all and (min-width: 1024px) and (max-width: 1800px) {
+     #grad1 {
+            filter: brightness(100%);
+            min-height: 98vh;
+            height: auto;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+
+            margin-left: 37%;
+            width: 20%;
+
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            border-left: none;
+            border-width: 0.75px;
+        }
+
+         #vitals{
+
+                border-color: black;
+             border-width: 0.75px;
+             border-style: solid;
+
+
+            }
+             #assessment{
+
+                border-color: black;
+             border-width: 0.75px;
+             border-style: solid;
+
+            }
+              #symptoms{
+               border-color: black;
+             border-width: 0.75px;
+             border-style: solid;
+
+            }
+               #summary{
+
+            border-color: black;
+             border-width: 0.75px;
+             border-style: solid;
+
+            }
+               #close_visit_button{
+                   margin-left: 90%;
+               }
+ #doctor_analytics {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctors_corner {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #list_of_patients {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #doctor_prrofile {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #helpline_number {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #about {
+        font-size: 16px;
+        color: #003300;
+
+    }
+
+    #Articles {
+        font-size: 16px;
+        width: 250px;
+    }
+
+    #Case_studies {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Case_reports {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #conferences {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Vet_needs {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Seminars {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+
+    #Books {
+        font-size: 16px;
+        width: 250px;
+         color: #003300;
+    }
+    #Articles{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Case_studies{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Case_reports{
+        font-size: 16px;
+         color: #003300;
+    }
+    #conferences{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Vet_needs{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Seminars{
+        font-size: 16px;
+         color: #003300;
+    }
+    #Books{
+        font-size: 16px;
+         color: #003300;
+    }
+    #close_btn{
+        margin-left: 80%;
+        color: #003300;
+    }
+
+        }
+
+
+
+</style>
+
+<body>
+
+ <div id="grad1">
+     <div id="first_div">
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" id="close_btn">&times;</a>
+                <div class="overlay-content">
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctor_prrofile"  style="font-weight: bold;">DOCTOR PROFILE</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="list_of_patients"  style="font-weight: bold;">LIST OF PATIENTS </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " role="tab" id="doctors_corner" style="font-weight: bold;" onclick="show_doctors_corner()">DOCTORS CORNER<span class="glyphicon glyphicon-menu-down ml-4" id=""></span></a>
+                    </li>
+                    <li id="show_div" style="display: none" >
+
+                          <a class="list-group-item list-group-item-action " role="tab" id="Articles" style="font-weight: bold;"> Articles </a>
+                          <a class="list-group-item list-group-item-action " role="tab" id="Case_studies" style="font-weight: bold;">Case studies</a>
+                          <a class="list-group-item list-group-item-action " role="tab" id="Case_reports" style="font-weight: bold;">Case reports </a>
+                          <a class="list-group-item list-group-item-action " role="tab" id="conferences" style="font-weight: bold;">Conferences </a>
+                          <a class="list-group-item list-group-item-action " role="tab" id="Vet_needs" style="font-weight: bold;">Vet needs</a>
+                          <a class="list-group-item list-group-item-action " role="tab" id="Seminars" style="font-weight: bold;">Seminars</a>
+                          <a class="list-group-item list-group-item-action " role="tab" id="Books" style="font-weight: bold;">Books</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action " href="#" role="tab" id="doctor_analytics"  style="font-weight: bold;">DOCTOR ANALYTICS </a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action "  role="tab" id="helpline_number" onclick="diseaseshow()" style="font-weight: bold;">HELPLINE NUMBER</a>
+                    </li>
+                    <li style="list-style: none">
+                        <a class="list-group-item list-group-item-action "  role="tab" id="about" onclick="diseaseshow()" style="font-weight: bold;">ABOUT</a>
+                    </li>
+
+                </div>
+        </div>
+         <span style="font-size:30px;cursor:pointer" id="span_id" onclick="openNav()">&#9776;</span>
+        <div class="row">
+            <div class="col">
+                <h3 id="heading_id" style="  font-weight: bold;">SUMMARY</h3>
+            </div>
+        </div>
+         <div id="wrapper_id" class="wrapper ">
+            <div class="container" id="container_id">
+                <div class="container-fluid">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row" id="table_div">
+                            <div class="col">
+                                <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th scope="col" id="vitals" readonly>{% if vitals.items %}
+                                    <b> VITALS</b> {% endif %}</th>
+                                    <th scope="col" id="assessment" readonly>{% if assessment.items %}
+                                        <span style="font-weight: bold;font-size: 20px;" >ASSESSMENT</span> {% endif %}</th>
+
+                                    {% if symptoms.items %}
+                                    <th scope="col" id="symptoms" readonly>
+                                        <span style="font-weight: bold;font-size: 20px;" >DIET&SYMPTOMS</span> {% endif %}</th>
+
+                                </tr>
+                    </thead>
+                <tbody>
+            <tr>
+                <td scope="row" style="border-style: solid;border-color: black" id="pet_id_column" readonly>
+                    {% for key,value in vitals.items%}
+                        <b>{{key|title}}</b> :  {{value}}
+                    {% endfor %}
+                </td>
+
+                <td CLASS="td" style="border-style: solid;border-color: black"  readonly>
+                    {% for key,value in assessment.items%}
+                        <b>{{key|title}}</b> :  {{value}}<span style="font-size: 15px;"><b>,</b> </span>
+                    {% endfor %}  </td>
+
+
+                <td style="border-style: solid;border-color: black" readonly >
+                    {% for key,value in symptoms.items%}
+                <b>{{key|title}}</b> :  {{value}}<span style="font-size: 15px;"><b>,</b> </span>
+                {% endfor %}</td>
+
+
+
+            </tr>
+         </tbody>
+         </table>
+         <!-- vaccination -->
+         <div class="row">
+            {% if vaccination.items %}
+     <div class="col-sm" >
+        <div class="panel panel-default" style="width: 500px;">
+            <div class="panel-heading" style="width: 500px;">
+                <span style="font-weight: bold;font-size: 20px;" >VACCINATION</span>
+            </div>
+        <div class="panel-body" style="width: 500px;">
+            {% for key,value in vaccination.items%}
+                <b>{{key|title}}</b> : {{value}}<span style="font-size: 15px;"><b>,</b> </span>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+        <hr>
+        {% endif %}
+  </div>
+
+  <!-- deworming -->
+
+   <div class="row">
+    {% if deworming.items %}
+<div class="col-sm" >
+<div class="panel panel-default" >
+    <div class="panel-heading" >
+        <span style="font-weight: bold;font-size: 20px;" >DEWORMING</span>
+    </div>
+<div class="panel-body" >
+    {% for key,value in deworming.items%}
+        <b>{{key|title}}</b> :  {{value}}<span style="font-size: 15px;"><b>,</b> </span>
+    {% endfor %}
+</div>
+</div>
+</div>
+<hr>
+{% endif %}
+</div>
+
+    <!-- diagnostic -->
+  <div class="row">
+            {% if diagnostic.items %}
+     <div class="col-sm" >
+        <div class="panel panel-default" style="width: 500px;">
+            <div class="panel-heading" style="width: 500px;">
+                <span style="font-weight: bold;font-size: 20px;" >diagnostic</span>
+            </div>
+        <div class="panel-body" style="width: 500px;">
+            {% for key,value in diagnostic.items%}
+                <b>{{key|title}}</b> :  {{value}}<span style="font-size: 15px;"><b>,</b> </span>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+        <hr>
+        {% endif %}
+  </div>
+
+<!-- prescription -->
+        <div class="row">
+            {% if prescription.items %}
+            <div class="col-sm" >
+        <div class="panel panel-default" style="width: 500px;">
+            <div class="panel-heading" style="width: 500px;">
+                <span style="font-weight: bold;font-size: 20px;" >prescription</span>
+            </div>
+        <div class="panel-body" style="width: 500px;">
+            {% for key,value in prescription.items%}
+                  <span id="test" style="font-size: 15px;"><b>{{value}}</b> </span><br>
+            {% endfor %}
+            <i>*(M=Morning;AN=Afternoon;N=night;)</i>
+        </div>
+        </div>
+        </div>
+        <hr>
+
+        {% endif %}
+     </div>
+    </div>
+    </div>
+
+
+
+{#     -----------------------   existing user ends---------------------------------#}
+    </form>
+    </div>
+      </div>
+   </div>
+ </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+ function openNav() {
+  document.getElementById("myNav").style.width = "50%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+<script>
+function myFunction() {
+    var printdata = document.getElementById('printid');
+    var close = document.getElementById('close_visit_button');
+    printdata.style.display="none";
+    close.style.display="none";
+    window.print();
+
+}
+
+function show_doctors_corner(){
+   if (document.getElementById('show_div').style.display=='none'){
+       document.getElementById('show_div').style.display='inline-block';
+
+
+   }else{
+       document.getElementById('show_div').style.display='none';
+
+   }
+}
+
+var x=document.getElementsByTagName('span')
+    for (i=0; i<x.length; i++)
+console.log(x)
+</script>
+</body>
+</html>

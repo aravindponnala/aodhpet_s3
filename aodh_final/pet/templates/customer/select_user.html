@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select user</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+</head>
+<style>
+{#=====================ANDROID MOBILE (FOR portrait)==========================#}
+        @media screen and (max-device-width: 480px) and (orientation:portrait) {
+      #logo_id{
+          margin-left: 70px;
+          margin-top: 60px;
+      }
+        #new_user{
+                margin-top: 30px;
+                margin-left: 70px;
+                border-style:solid;
+                border-width:thick;
+                border-radius: 30px;
+                border-color: #1f7a1f;
+                width: 200px;
+                font-weight: bold;
+                color: #1f7a1f ;
+                height: 50px;
+                font-size: 16px;
+                padding-top: 11px;
+
+        }    
+    #existing_user{
+                width: 200px;
+                margin-left: 70px;
+                border-style:solid;
+                border-width:thick;
+                border-radius: 30px;
+                border-color: #1f7a1f;
+                font-weight: bold;
+                color: #1f7a1f ;
+                height: 50px;
+                font-size: 16px;
+                padding-top: 11px;
+
+}
+     #grad1 {
+            filter:brightness(100%);
+            height: 800px;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white , lightgrey); /* Standard syntax (must be last) */
+            }
+
+        }
+
+
+{#==============================for desktop=========================================#}
+
+@media all and (min-width: 1024px) and (max-width: 1800px) {
+
+    .row {
+        width: 100%;
+    }
+
+    .col {
+        width: 100%;
+    }
+#logo_id{
+    margin-left: 460px;
+
+}
+#new_user{
+                 width: 300px;
+                margin-left: 380px;
+                border-style:solid;
+                border-width:thin;
+                border-radius: 30px;
+                border-color: #1f7a1f;
+                font-weight: bold;
+                color: #1f7a1f ;
+                height: 50px;
+                font-size: 16px;
+                padding-top: 11px;
+    margin-top: 50px;
+}
+#existing_user{
+
+                width: 300px;
+                margin-left: 380px;
+                border-style:solid;
+                border-width:thin;
+                border-radius: 30px;
+                border-color: #1f7a1f;
+                font-weight: bold;
+                color: #1f7a1f ;
+                height: 50px;
+                font-size: 16px;
+                padding-top: 11px;
+}
+
+}
+</style>
+
+<body>
+ <div id="grad1">
+<div id="wrapper_id" class="wrapper ">
+   <div class="container" id="container_id">
+      <div class="container-fluid">
+
+    <form method="post">
+{#     -----------------------   starting row for image----------------------------------#}
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="{% static 'media/aodh_logo.png' %}" id="logo_id">
+            </div>
+        </div>
+{#      ----------------------  closing row for image---------------------------------#}
+{#       -------------------- new user started------------------------------------------#}
+        <div class="row">
+            <div class="col">
+                <a class="list-group-item list-group-item-action " role="tab" id="new_user"> <center>NEW USER </center></a>
+
+{#                <label for="New-User" class="form-label"  id="new_user" ><center></center></label>#}
+            </div>
+        </div>
+{#    --------------------------    new user ends-------------------------------------#}
+{#    ------------------------    existing user started-----------------------------#}
+        <div class="row mt-3">
+            <div class="col">
+                <a class="list-group-item list-group-item-action " role="tab" id="existing_user"> <center>EXISTING USER</center></a>
+            </div>
+        </div>
+{#     -----------------------   existing user ends---------------------------------#}
+    </form>
+    </div>
+      </div>
+   </div>
+</div>
+</body>
+</html>

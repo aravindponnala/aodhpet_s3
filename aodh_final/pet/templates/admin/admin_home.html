@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% if superuser%}
+      <h1>hello {{username}}</h1>
+      <a href="{% url 'doctor_registration' %}">Doctor Registration</a><br>
+      <a href="{% url 'doctor_list' %}">Doctor List</a><br>
+      <a href="{% url 'registrad_users_list' %}">Registrad Users</a><br>
+      <a href="{% url 'patients_list' %}">Patients List</a><br>
+      <a href="{% url 'payment_anlytics' %}">Payment Analytics</a><br>
+      <a href="{% url 'doctors_corner' %}">Doctors Corner</a><br>
+      <a href="{% url 'vaccination_remainder' %}">Generate Vaccination Remiander list</a>
+    {% else %}
+      <h1>hello staff {{username}}</h1>
+    {% endif %}
+  </body>
+</html

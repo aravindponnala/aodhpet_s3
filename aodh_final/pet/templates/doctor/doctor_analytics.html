@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doctor analytics</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+</head>
+<style>
+{#=====================ANDROID MOBILE (FOR portrait)==========================#}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 812px)
+{
+    #heading_id {
+                text-align: center;
+                width: 75%;
+                height: 35px;
+            }
+
+
+
+
+             #grad1 {
+                min-width:100%;
+                 min-height: 93vh;
+                 height: auto;
+                 border-radius: 10px;
+                filter: brightness(100%);
+                {#height: calc(100vw);#}
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            }
+
+          
+            .td{
+                border-style: solid;
+                border-color: black;
+
+            }
+            #pet_id{
+
+                border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+             #consutation_fee{
+                  border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+              #total_visit_charges{
+                   border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+               #summary{
+                    border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+
+        }
+{#==============================for desktop=========================================#}
+
+@media all and (min-width: 1024px) and (max-width: 1800px) {
+      #grad1 {
+            filter: brightness(100%);
+            min-height: 98vh;
+            height: auto;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+        }
+
+        #heading_id {
+
+            margin-left: 500px;
+            width: 320px;
+
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            border-left: none;
+            border-width: 0.75px;
+        }
+#pet_id{
+
+                border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+             #consutation_fee{
+                  border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+              #total_visit_charges{
+                   border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+               #summary{
+                    border-bottom: none;
+               border-color: black;
+                border-style: solid;
+            }
+
+#pet_id_column{
+                  border-top: none;
+              }
+
+
+        }
+
+
+
+</style>
+
+<body>
+
+ <div id="grad1">
+     <div id="first_div">
+     <div class="row">
+            <div class="col">
+                <h3 id="heading_id" style="  font-weight: bold;border-style:solid;border-color: darkgreen;background-color: #003300;color: white">DOCTOR ANALYTICS</h3>
+            </div>
+        </div>
+<div id="wrapper_id" class="wrapper ">
+   <div class="container" id="container_id">
+      <div class="container-fluid">
+      <label for="">Date:</label>  {{ visit_date }}
+       
+
+{#       -------------------- email started------------------------------------------#}
+<input type="hidden" id="doc_id" name="doc_id" value="{{ doc_id }}">
+        <div class="row" id="table_div">
+            <div class="col">
+                <table class="table table-bordered">
+                    
+                    <thead>
+                        <tr>
+                            <th scope="col" id="pet_id">Pet Id</th>
+                            <th scope="col" id="consutation_fee">Consultation fee</th>
+                            <th scope="col" id="total_visit_charges">Total visit charges</th>
+                            <th scope="col" id="summary">Summary</th>
+                        </tr>
+                    </thead>
+                    {% for value in fee %}
+                    <form method="post">
+                        {% csrf_token %}
+                <tbody>
+            <tr>
+                <th scope="row" style="border-style: solid;border-color: black" id="pet_id_column">{{ value.pet_id }}</th>
+                <td CLASS="td" style="border-style: solid;border-color: black" > {{ value.consultation_fee }}</td>
+                <td style="border-style: solid;border-color: black" >{{ value.final_fee }}</td>
+                <td style="border-style: solid;border-color: black" ><a href="{% url 'summary_analytics' pk=value.purpose_id.pet_id.customer_id.pk value=value.pet_id doc_id=doc_id %}" >summary</a><br></td>
+            </tr>
+           
+        
+    </form>
+    {% endfor %}
+</tbody>
+</table>
+            </div>
+        </div>
+
+   
+    </div>
+      </div>
+   </div>
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pet profile</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel=”stylesheet” href=”css/bootstrap-responsive.css”>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Titillium+Web" rel="stylesheet">
+
+</head>
+<style>
+{#=====================ANDROID MOBILE (FOR portrait)==========================#}
+        @media screen and (max-device-width: 480px) and (orientation:portrait) {
+#heading_id{
+      border-style:solid;
+      border-width:thick;
+      border-color: darkgreen;
+      background-color: #003300;
+      color: white;
+     margin-top: 20px;
+     width: 200px;
+    height: 35px;
+    text-align: center;
+}
+
+
+     #grad1 {
+                min-height: 179vw;
+                filter: brightness(100%);
+                border-radius: 10px;
+                height:auto;
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+            }
+
+    #name {
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+     #reg_no {
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+      #gender {
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+       #age {
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+
+
+
+        }
+
+
+{#==============================for desktop=========================================#}
+
+@media all and (min-width: 1024px) and (max-width: 1800px) {
+    #grad1 {
+            filter: brightness(100%);
+            min-height: 98vh;
+            height: auto;
+            background-color: red; /* For browsers that do not support gradients */
+            background-image: linear-gradient(to right, white, lightgrey); /* Standard syntax (must be last) */
+        }
+
+        body{
+          overflow: hidden;
+        }
+
+        #heading_id {
+            padding-top: 6px;
+            margin-left: 500px;
+            width: 320px;
+            height: 40px;
+            border-color: darkgreen;
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            border-left: none;
+            border-width: 0.75px;
+        }
+
+    #name {     margin-left: 300px;
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+     #reg_no {
+          margin-left: 300px;
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+      #gender {
+           margin-left: 300px;
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+       #age {
+            margin-left: 300px;
+                margin-top: 4px;
+                color: #003300;
+                font-size: 16px;
+                font-weight: bold;
+
+            }
+
+        }
+
+
+
+</style>
+
+<body>
+
+ <div id="grad1">
+     <div id="first_div">
+     <div class="row">
+            <div class="col">
+                <h3 id="heading_id" style="  font-weight: bold;
+
+
+">PET PROFILE</h3>
+            </div>
+        </div>
+<div id="wrapper_id" class="wrapper ">
+   <div class="container" id="container_id">
+      <div class="container-fluid">
+
+    <form method="post">
+
+
+{#       -------------------- email started------------------------------------------#}
+         <div class="row">
+                  <div class="col">
+                      <label for="create-account" class="form-label" style="font-weight: bold;" id="name">PET NAME:</label>
+
+                  </div>
+              <div class="col">
+                        <img id="myImg" src="{}" alt="profile picture" style="width:100px;height: 100px">
+
+
+                  </div>
+         </div>
+{#    --------------------------    new user ends-------------------------------------#}
+          <div class="row">
+                  <div class="col">
+                      <label for="create-account" class="form-label" style="font-weight: bold;" id="reg_no">PET ID</label>
+                  </div>
+         </div>
+         <div class="row">
+                  <div class="col">
+                      <label for="create-account" class="form-label" style="font-weight: bold;" id="reg_no">BREED</label>
+                  </div>
+         </div>
+{#    ------------------------    existing user started-----------------------------#}
+         <div class="row">
+                  <div class="col">
+                      <label for="create-account" class="form-label" style="font-weight: bold;" id="gender">GENDER:</label>
+                  </div>
+         </div>
+         <div class="row">
+                  <div class="col">
+                      <label for="create-account" class="form-label" style="font-weight: bold;" id="age">AGE:</label>
+                  </div>
+         </div>
+
+
+
+
+{#     -----------------------   existing user ends---------------------------------#}
+    </form>
+    </div>
+      </div>
+   </div>
+ </div>
+</div>
+</body>
+</html>

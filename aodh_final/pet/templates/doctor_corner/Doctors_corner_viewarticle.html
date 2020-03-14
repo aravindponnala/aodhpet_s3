@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+ 
+    {% for article in article %}
+<div class="" >
+   
+        <b>title:</b>
+        {{article.article_title}}<br>
+        <b>summary:</b>
+        {{article.summery}}<br>
+        
+          <b>published on:</b>
+          {{article.published_on}}<br>
+         
+            <b>authors:</b>
+            {{article.authors}}<br>
+ 
+       <b>content</b>
+        {{article.content}}
+     
+  </div>
+    {% endfor %}
+  </body>
+</html>
